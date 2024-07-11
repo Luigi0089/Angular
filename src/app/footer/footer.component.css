@@ -1,0 +1,15 @@
+div.tab-content>div{
+  text-align: center;
+  align-content: center;
+}
+ul{
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+li{
+
+
+  text-align: center;
+}
+

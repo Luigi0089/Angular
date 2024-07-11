@@ -1,0 +1,37 @@
+.card-square {
+  justify-content: space-between;
+  border: none;
+  background-color: #ffffff;
+  display: inline-block;
+  width: 200px;
+  height: 400px;
+  margin: 20px;
+  text-align: center;
+
+
+}
+
+.card-square img {
+  width: 100%;
+  height: 250px; /* Altezza fissa per rendere le immagini quadrate */
+  object-fit: cover; /* Mantiene le proporzioni corrette */
+}
+
+.card-square .name {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.card-square .updated {
+  font-size: 0.8em;
+  color: gray;
+}
+
+.card {
+
+  display: inline-block;
+  width: 200px;
+  margin: 20px;
+  text-align: center;
+  border: none;
+}

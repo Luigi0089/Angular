@@ -1,0 +1,85 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg  navbar-dark fixed-top">
+
+    <div class="container-fluid" >
+
+      <a class="navbar-brand" href="#"  style="font-family:'Baskerville Old Face'"  *ngIf="!UserService.isLogged && !UserService.isRegistered">
+        <img width="40" src=Logo_vet.png alt="Logo" >
+
+      </a>
+
+      <a class="navbar-brand" href="#"  style="font-family:'Baskerville Old Face'" *ngIf="UserService.isLogged">
+        <img width="40" src=Logo_vet.png alt="Logo" >
+        {{UserService.UtenteLog.email}}
+
+      </a>
+
+      <a class="navbar-brand" href="#"  style="font-family:'Baskerville Old Face'" *ngIf="!UserService.isLogged && UserService.isRegistered">
+        <img width="40" src=Logo_vet.png alt="Logo" >
+        Registrazione completata!
+
+      </a>
+
+
+
+
+
+
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Chi siamo?</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Le nostre battaglie</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contatti</a>
+          </li>
+          <li class="nav-item" *ngIf="!UserService.isLogged">
+            <button class="btn btn-primary" routerLink="/login">Login</button>
+          </li>
+          <li class="nav-item" *ngIf="!UserService.isLogged">
+            <button class="btn btn-primary" routerLink="/register">Sing In</button>
+          </li>
+          <li class="nav-item" *ngIf="UserService.isLogged">
+            <button class="btn btn-primary" routerLink="/crea_corso">Creao Corso</button>
+          </li>
+          <li class="nav-item" *ngIf="UserService.isLogged">
+            <button class="btn btn-primary" routerLink="/modifica">Cambia password</button>
+          </li>
+          <li class="nav-item" *ngIf="UserService.isLogged">
+            <button (click)="Submit()" class="btn btn-primary" routerLink="/Home">Logout</button>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Altro
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Merchadising</a></li>
+              <li><a class="dropdown-item" href="#">Extras</a></li>
+              <li><a class="dropdown-item" href="#">Media</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Foto</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<br> <br> <br>
+

@@ -1,0 +1,14 @@
+.carosello {
+  flex: 1;
+  background: lightgrey;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+height: 100%;
+}
+
+div{
+  color: #343a40;
+}
+

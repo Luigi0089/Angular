@@ -1,0 +1,27 @@
+<div class="auth-form" >
+  <h4>Sing in!</h4>
+  <form (ngSubmit)="OnSubmit(form)" #form=ngForm>
+    <div class="form-group" >
+      <label for="name">Name:</label>
+      <input [(ngModel)]="this.UserService.UtenteReg.nome" name="name" type="text" id="name" class="form-control" placeholder="Name"  required minlength="3" #nome=ngModel />
+    <span *ngIf="!nome.valid && nome.touched"> Inserire il nome</span>
+    </div>
+    <div class="form-group" >
+      <label for="last">Lastname</label>
+      <input [(ngModel)]="this.UserService.UtenteReg.cognome" name="last" type="text" id="last" class="form-control" placeholder="Lastname"  required minlength="3" #cognome=ngModel />
+      <span *ngIf="!cognome.valid && cognome.touched"> Inserire il cognome</span>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input [(ngModel)]="this.UserService.UtenteReg.email" name="mail" type="email" id="email" class="form-control"  placeholder="Email@email.com" required #email=ngModel />
+      <span class="error" *ngIf="!email.valid && email.touched" > Email non valida</span>
+    </div>
+    <div class="form-group" >
+      <label for="password">Password:</label>
+      <input [(ngModel)]="this.UserService.UtenteReg.password"  name="password" type="password" id="password" class="form-control" required   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.*\s).{6,30}$" #password=ngModel />
+      <span *ngIf="!password.valid && password.touched"> Inserire almeno 6 caratteri, una maiuscola, una minuscola e un carattere speciale e non deve contenere spazi</span>
+    </div>
+    <br>
+    <button [disabled]="!form.valid"  type="submit" class="btn btn-primary" >Register</button>
+  </form>
+</div>

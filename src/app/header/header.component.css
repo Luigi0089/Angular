@@ -1,0 +1,21 @@
+
+nav{
+ background: rgb(47, 95, 255);
+}
+.navbar-nav {
+  margin-left: auto;
+}
+.custom-margin {
+  background: red;
+  margin: 10px;
+}
+.navbar-bg-color {
+  background: rgb(47, 95, 255);
+  color: #ffffff;
+}
+.navbar-bg-color h1 {
+  color: #ffffff;
+}
+
+
+

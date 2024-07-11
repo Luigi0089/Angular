@@ -1,0 +1,32 @@
+<app-header [utente]="utente" [registrato]="registrato" ></app-header>
+
+<router-outlet></router-outlet>
+
+<div class="raw">
+<img height="100" src=Logo_vet.png alt="Logo">
+  <h1>IMPRONTA STUDENTESCA</h1>
+</div>
+<br>
+<br>
+
+  <div class="main-container">
+
+    <app-carosello></app-carosello>
+
+  </div>
+
+
+<br >
+<div class="container mt-5" >
+<h2 style="text-align: center; color:rgb(47, 95, 255);"> I NOSRI CORSI</h2>
+  <br>
+<div class="row">
+  <div *ngFor="let corso of corsi" class="col-md-4 mb-3">
+    <app-card-gallery [corso]="corso"></app-card-gallery>
+  </div>
+</div>
+</div>
+
+
+<app-footer></app-footer>
+

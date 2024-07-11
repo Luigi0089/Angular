@@ -1,0 +1,29 @@
+
+<div class="auth-form" >
+  <h4>Crea un nuovo corso!</h4>
+  <form (ngSubmit)="OnSubmit(form)" #form=ngForm>
+    <div class="form-group" >
+      <label for="nome">Nome:</label>
+      <input [(ngModel)]="this.CreazioneCorso.nome" name="nome" type="text" id="nome" class="form-control" placeholder="Nome"  required minlength="3" #nome=ngModel />
+      <span *ngIf="!nome.valid  && nome.touched">Il nome del corso deve avere almeno 3 caratteri</span>
+    </div>
+    <div class="form-group" >
+      <label for="breve">Descrizione breve</label>
+      <input [(ngModel)]="this.CreazioneCorso.descrizioneBreve" name="breve" type="text" id="breve" class="form-control"  placeholder="Descrizione breve" required minlength="3" #breve=ngModel />
+      <span *ngIf="!breve.valid  && breve.touched">La descrizione breve del corso deve avere almeno 3 caratteri</span>
+    </div>
+    <div class="form-group">
+      <label for="completa">Descrizione completa:</label>
+      <input [(ngModel)]="this.CreazioneCorso.descrizioneCompleta" name="completa" type="email" id="completa" class="form-control" placeholder="Descrizione Completa"  required minlength="3" #completa=ngModel />
+      <span *ngIf="!completa.valid  && completa.touched">La descrizione completa del corso deve avere almeno 3 caratteri</span>
+    </div>
+    <div class="form-group" >
+      <label for="durata">Durata:</label>
+
+      <span *ngIf="!durata.valid  && durata.touched">La durata del corso deve essere un intero positivo</span><input [(ngModel)]="this.CreazioneCorso.durata"  name="durata" type="number" id="durata" class="form-control" required min="1"  #durata=ngModel />
+    </div>
+    <br>
+    <button [disabled]="!form.valid" type="submit" class="btn btn-primary">Register</button>
+    <span>Solo gli amministratori possono creare corsi</span>
+  </form>
+</div>

@@ -1,0 +1,31 @@
+.main-container {
+
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+
+}
+
+.auth-container {
+
+  display: flex;
+  flex-direction: column;
+margin-left: 20%;
+
+}
+
+
+
+.auth-form a {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+}
+
+div>h1{
+  text-align: center;
+  color:red;
+}
+img{
+  float: left;
+}

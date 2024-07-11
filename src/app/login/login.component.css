@@ -1,0 +1,19 @@
+.auth-form {
+  background: white;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  margin-bottom: 15px;
+
+  /* Nuove proprietà aggiunte */
+  position: relative;
+  width: 300px; /* Larghezza rettangolare */
+  height: auto; /* Altezza automatica in base al contenuto */
+   margin-top: 10px;
+  margin-left: auto; /* Allinea a destra */
+  margin-right: 200px; /* Spazio a destra dalla pagina */
+}
+input+span{
+  color: red;
+  font-size: small;
+}
