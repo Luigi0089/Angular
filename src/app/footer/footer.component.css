@@ -1,15 +1,45 @@
-div.tab-content>div{
-  text-align: center;
-  align-content: center;
+div.tab-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-ul{
-  list-style-position: inside;
+
+.tab-pane {
+  display: none;
+  text-align: center;
+  align-items: center;
+  flex-grow: 1; /* Per far espandere il contenuto della scheda */
+}
+
+.tab-pane.active {
+  display: flex; /* Mostra solo la scheda attiva */
+  flex-direction: column; /* Layout in colonna */
+}
+
+.tab-pane h2 {
+  margin-top: 0; /* Rimuove il margine superiore predefinito dell'h2 */
+}
+
+ul {
+  list-style: none; /* Rimuove i pallini predefiniti */
   padding-left: 0;
 }
 
-li{
-
-
-  text-align: center;
+li {
+  display: flex;
+  align-items: baseline; /* Allinea verticalmente il testo con il pallino */
+  position: relative;
+  text-align: left; /* Allinea il testo a sinistra */
+  margin-bottom: 10px; /* Spazio inferiore tra gli elementi dell'elenco */
+  padding-left: 30px; /* Spazio per il pallino custom */
 }
 
+li::before {
+  content: "•"; /* Usa un punto come pallino per la lista */
+  position: absolute;
+  left: 0; /* Posiziona il pallino a sinistra del testo */
+  top: 50%; /* Posiziona il pallino verticalmente al centro */
+  transform: translateY(-50%); /* Centra il pallino verticalmente */
+  font-size: 14px; /* Dimensione del pallino */
+
+}

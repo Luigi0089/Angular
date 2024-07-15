@@ -1,12 +1,42 @@
+body {
+  display: flex;
+  justify-content: center; /* Centra il contenitore .carosello orizzontalmente */
+  align-items: center; /* Centra il contenitore .carosello verticalmente */
+  height: 100vh; /* Imposta l'altezza del body per occupare l'intera viewport */
+  margin: 0; /* Rimuove i margini predefiniti */
+  background-color: #f8f9fa; /* Colore di sfondo per distinguere il carosello */
+}
+
 .carosello {
-  flex: 1;
   background: lightgrey;
   padding: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   overflow: hidden;
-height: 100%;
+  width: 80%; /* Imposta una larghezza relativa per il carosello */
+  max-width: 1200px; /* Imposta una larghezza massima */
+  margin: 0 auto; /* Centra il carosello orizzontalmente */
 }
+
+.carousel-inner {
+  width: 100%; /* Assicurati che l'interno del carosello occupi l'intera larghezza */
+}
+
+
+
+.carousel-item img {
+  max-width: 100%; /* L'immagine non supererà mai la larghezza del carosello */
+  max-height: 80vh; /* L'immagine non supererà mai l'altezza della viewport */
+  width: auto; /* Mantiene le proporzioni dell'immagine */
+  height: auto; /* Mantiene le proporzioni dell'immagine */
+  object-fit: contain; /* L'immagine si adatterà al contenitore mantenendo le proporzioni */
+}
+
+app-logo-bar {
+  display: block; /* Assicurati che app-logo-bar sia un blocco per essere posizionato sotto il carosello */
+  margin-top: 15px; /* Spazio tra il carosello e app-logo-bar */
+}
+
 
 div{
   color: #343a40;

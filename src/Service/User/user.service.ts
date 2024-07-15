@@ -5,6 +5,8 @@ import {Utente_get} from "../../Model/Utente_get";
 import {UtenteReg} from "../../Model/UtenteReg";
 import {UtenteLog} from "../../Model/UtenteLog";
 import {ModificaPassword} from "../../Model/ModificaPassword";
+import {Token} from "../../Model/Token";
+
 
 
 @Injectable({
@@ -15,6 +17,7 @@ export class UserService {
   isRegistered: boolean;
   UtenteLog:UtenteLog=new UtenteLog();
   UtenteReg:UtenteReg=new UtenteReg();
+  Token:Token=new Token();
 
   constructor(private http: HttpClient) { }
 
@@ -39,7 +42,6 @@ export class UserService {
 
   PostLog(utenteLog :UtenteLog):Observable<any>{
     return this.http.post('http://localhost:8080/api/utente/login',utenteLog);
-
   }
 
   PutPassword(modificaPassword: ModificaPassword):Observable<any>{

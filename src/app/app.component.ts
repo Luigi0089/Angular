@@ -36,11 +36,8 @@ export class AppComponent implements OnInit {
   isLogged: boolean = false;
   isRegistered: boolean = false;
 
-  caso: number = 0;
 
-  Corsi: Corso_get[];
-
-  constructor(protected UserService: UserService, private CorsoService: CorsoService, private LocalStorage: LocalStorageService, private router: Router) {
+  constructor(protected UserService: UserService, protected CorsoService: CorsoService, private LocalStorage: LocalStorageService, private router: Router) {
     this.UserService.getAll().subscribe(result => {
       console.log(result)
     })
@@ -49,11 +46,7 @@ export class AppComponent implements OnInit {
       console.log(result)
     })
 
-    this.CorsoService.getAll().subscribe(value => {
-      this.corsi = value
-      console.log(value)
 
-    })
 
     this.router.events.subscribe(value => {
       if (value instanceof NavigationEnd) {
@@ -63,39 +56,19 @@ export class AppComponent implements OnInit {
   }
 
 
-  onLoginEvent($event: loginRequest) {
-    console.log("login effettuato con successo");
-  }
+
 
 
   utente = new loginRequest();
   registrato: RegisterRequest = new RegisterRequest();
-  utenteReg: UtenteReg = new UtenteReg();
-
-  corso: CreazioneCorso = new CreazioneCorso();
-  modificaPassword: ModificaPassword = new ModificaPassword();
-  regexMail: string = "[A-z0-9\\.\\+_-]+@[A-z0-9\\._-]+\\.[A-z]{2,8}";
-  regexPassword: string = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{6,20}";
-
-  logginFailed: boolean;
 
 
-  setRegister(registrato: RegisterRequest): void {
-    this.registrato = registrato;
-    this.caso = 2;
 
-    this.utenteReg.nome = registrato.nome;
-    this.utenteReg.cognome = registrato.cognome;
-    this.utenteReg.email = registrato.mail;
-    this.utenteReg.password = registrato.password;
-    this.UserService.PostReg(this.utenteReg).subscribe(response => {
 
-      if (response) {
-        this.isRegistered = true;
-      }
-      console.log('Utente Registrato');
-    })
-  }
+
+
+
+
 
 
 
@@ -105,7 +78,11 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.CorsoService.getAll().subscribe(value => {
+      this.CorsoService.corsi = value
+      console.log(value)
 
+    })
   }
 
 }

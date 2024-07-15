@@ -14,7 +14,8 @@
     <br>
     <button [disabled]="!form.valid"  type="submit" class="btn btn-primary">Login</button>
   </form>
- <span *ngIf="errore"> CREDENZIALI ERRATE!</span>
+ <span *ngIf="errore  && password.touched && email.touched"> CREDENZIALI ERRATE!</span>
+  <br *ngIf="errore  && password.touched && email.touched">
   <a routerLink="/register"> Non hai un account? registrati!</a>
 </div>
 

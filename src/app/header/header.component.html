@@ -50,7 +50,7 @@
           <li class="nav-item" *ngIf="!UserService.isLogged">
             <button class="btn btn-primary" routerLink="/register">Sing In</button>
           </li>
-          <li class="nav-item" *ngIf="UserService.isLogged">
+          <li class="nav-item" *ngIf="UserService.isLogged && this.UserService.Token.ruolo==1">
             <button class="btn btn-primary" routerLink="/crea_corso">Creao Corso</button>
           </li>
           <li class="nav-item" *ngIf="UserService.isLogged">

@@ -27,6 +27,11 @@ export class FormComponent {
     if(form.valid){
 
         this.CorsoService.CreaCorso(this.CreazioneCorso).subscribe(response => {
+          this.CorsoService.getAll().subscribe(value => {
+            this.CorsoService.corsi = value
+            
+
+          })
           this.Router.navigate(['Home'])})
       }
 

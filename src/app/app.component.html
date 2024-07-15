@@ -21,7 +21,7 @@
 <h2 style="text-align: center; color:rgb(47, 95, 255);"> I NOSRI CORSI</h2>
   <br>
 <div class="row">
-  <div *ngFor="let corso of corsi" class="col-md-4 mb-3">
+  <div *ngFor="let corso of this.CorsoService.corsi" class="col-md-4 mb-3">
     <app-card-gallery [corso]="corso"></app-card-gallery>
   </div>
 </div>

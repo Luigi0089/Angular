@@ -29,6 +29,7 @@ export class CorsoService {
     );
 
   }
+  corsi: Corso_get[] = [];
 
   CreaCorso(corsoCreazione:CreazioneCorso):Observable<any> {
 
